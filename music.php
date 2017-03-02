@@ -4,7 +4,7 @@
 	Web Programming Step by Step
 	Lab #3, PHP
 	-->
-
+<?php $songs = 678 ?>
 	<head>
 		<title>Music Viewer</title>
 		<meta charset="utf-8" />
@@ -18,8 +18,8 @@
 		<!-- Number of Songs (Variables) -->
 		<p>
 			I love music.
-			I have 1234 total songs,
-			which is over 123 hours of music!
+			I have <?=$songs ?> total songs,
+			which is over <?= $songs/10 ?> hours of music!
 		</p>
 
 		<!-- Music Results Pages (Loops) -->
@@ -27,11 +27,13 @@
 			<h2>Google's Music Results</h2>
 		
 			<ol>
-				<li><a href="https://www.google.com/search?tbm=nws&amp;q=Music&amp;start=0">Page 1</a></li>
-				<li><a href="https://www.google.com/search?tbm=nws&amp;q=Music&amp;start=10">Page 2</a></li>
-				<li><a href="https://www.google.com/search?tbm=nws&amp;q=Music&amp;start=20">Page 3</a></li>
-				<li><a href="https://www.google.com/search?tbm=nws&amp;q=Music&amp;start=30">Page 4</a></li>
-				<li><a href="https://www.google.com/search?tbm=nws&amp;q=Music&amp;start=40">Page 5</a></li>
+				<?php 
+				for($i=0; $i<5; $i++){
+					?>
+					<li><a href="https://www.google.com/search?tbm=nws&amp;q=Music&amp;start=<?=$i*10 ?>">Page <?=$i+1 ?></a></li>
+				<?php
+				}
+				?>
 			</ol>
 		</div>
 
